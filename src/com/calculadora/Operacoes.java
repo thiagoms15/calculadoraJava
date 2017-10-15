@@ -31,8 +31,8 @@ public class Operacoes {
      */
     public static double subtracao(double a, double b)
     {
-        double sub = a - b;
-        return sub;
+            double sub = a - b;
+            return sub;
     }
     
     /**
@@ -43,8 +43,9 @@ public class Operacoes {
      */
     public static double multiplicacao(double a, double b)
     {
-        double mult = a * b;
-        return mult;
+            double mult = a * b;
+            return mult;
+
     }
 
     /**
@@ -52,11 +53,10 @@ public class Operacoes {
      * @param a
      * @param b
      * @return
-     * @todo implementar try-catch
      */
     public static double divisao(double a, double b)
     {
-        double div = a / b;
-        return div;
-    }
+            double div = a / b;
+            return div;
+   }
 }

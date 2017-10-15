@@ -186,31 +186,65 @@ public class TelaCalculadora extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSomaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSomaActionPerformed
-        double soma;
+        try{
+double soma;
         soma = Operacoes.soma(visorTemp, Double.parseDouble(txtVisor.getText()));
         visorTemp = soma;
         txtVisor.setText(Double.toString(soma));
+        }
+        catch(NumberFormatException e)
+        {
+            System.out.println("Formato invalido");
+            txtVisor.setText(Double.toString(visorTemp));
+        }
     }//GEN-LAST:event_btnSomaActionPerformed
 
     private void btnSubtracaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubtracaoActionPerformed
+        try{
         double subtracao;
         subtracao = Operacoes.subtracao(visorTemp, Double.parseDouble(txtVisor.getText()));
         visorTemp = subtracao;
         txtVisor.setText(Double.toString(subtracao));
+        }
+        catch(NumberFormatException e)
+        {
+            System.out.println("Formato invalido");
+            txtVisor.setText(Double.toString(visorTemp));
+        }
     }//GEN-LAST:event_btnSubtracaoActionPerformed
 
     private void btnMultiplicacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMultiplicacaoActionPerformed
+        try{
         double multiplicacao;
         multiplicacao = Operacoes.multiplicacao(visorTemp, Double.parseDouble(txtVisor.getText()));
         visorTemp = multiplicacao;
         txtVisor.setText(Double.toString(visorTemp));
+        }
+        catch(NumberFormatException e)
+        {
+            System.out.println("Formato invalido");
+            txtVisor.setText(Double.toString(visorTemp));
+        }
     }//GEN-LAST:event_btnMultiplicacaoActionPerformed
 
     private void btnDivisaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDivisaoActionPerformed
+         try{
         double divisao;
         divisao = Operacoes.divisao(visorTemp, Double.parseDouble(txtVisor.getText()));
         visorTemp = divisao;
         txtVisor.setText(Double.toString(visorTemp));
+        
+        }
+        catch(ArithmeticException e)
+        {
+            System.out.println("Divisao por 0");
+        txtVisor.setText(Double.toString(visorTemp));       
+        }
+        catch(NumberFormatException e)
+        {
+            System.out.println("Formato invalido");
+            txtVisor.setText(Double.toString(visorTemp));
+        }
     }//GEN-LAST:event_btnDivisaoActionPerformed
 
     /**
